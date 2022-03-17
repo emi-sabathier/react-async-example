@@ -12,10 +12,9 @@ const App = () => {
       /* await: await indique qu'on renvoie une promesse. On "attend" le résultat de l'API github
       Si l'api est down, ou autre, on passe dans le catch
       */
-      const data = await axios.get('https://api.github.com/search/users?q=emi-sabathier');
-      setData(data.data);
-      console.log('Voilà les datas renvoyées: ', data)
-      return data;
+      const response = await axios.get('https://api.github.com/search/users?q=emi-sabathier');
+      setData(response.data);
+      console.log('Voilà les datas renvoyées: ', response)
     } catch (error) {
       /* Une erreur sera renvoyée ici s'il y en a une
       Remplace https://api.github.com/search/users?q=emi-sabathier par https://api.github.com/search/urlquiexistepas dans le try
